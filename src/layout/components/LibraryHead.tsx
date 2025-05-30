@@ -1,4 +1,3 @@
-import React from "react";
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import AddIcon from '@mui/icons-material/Add';
 import styled from "styled-components";
