@@ -1,2 +1,2 @@
-"use strict";(self.webpackChunkspotify_demo=self.webpackChunkspotify_demo||[]).push([[442],{5442:(e,s,t)=>{t.r(s),t.d(s,{default:()=>d}),t(6540);var a=t(4848);const d=()=>(0,a.jsx)("div",{children:"PlaylistPage"})}}]);
-//# sourceMappingURL=442.js.map?ver=f73e580a2e9d98f08c6c
+"use strict";(self.webpackChunkspotify_demo=self.webpackChunkspotify_demo||[]).push([[442],{5442:(e,s,t)=>{t.r(s),t.d(s,{default:()=>d});var a=t(4848);const d=()=>(0,a.jsx)("div",{children:"PlaylistPage"})}}]);
+//# sourceMappingURL=442.js.map?ver=e1c5b0de2505fb575714
