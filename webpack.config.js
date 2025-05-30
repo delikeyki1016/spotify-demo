@@ -61,7 +61,7 @@ module.exports = (env, argv) => {
             ],
         },
         output: {
-            path: path.resolve(__dirname, "dist"), // 번들링될 파일이 저장될 위치와 이름 지정
+            path: path.resolve(__dirname, "build"), // 번들링될 파일이 저장될 위치와 이름 지정
             chunkFilename: "[name].js?ver=[hash]",
             filename: "[name].js?ver=[hash]",
             publicPath: "/",
