@@ -5,11 +5,13 @@ import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import LibraryHead from "./components/LibraryHead";
 import Library from "./components/Library";
+import NavBar from "./components/NavBar";
 
 const Layout = styled("div")({
     display: "flex",
     height: "100vh",
     padding: "8px",
+    gap: "8px",
 })
 
 const Sidebar = styled("div")(({theme})=>({
@@ -30,12 +32,12 @@ const Logo = styled("div")(()=>({
 }))
 
 const ContentBox = styled(Box)(({theme})=>({
+    height: "100%",
     borderRadius: "8px",
     backgroundColor: theme.palette.background.paper,
     color: theme.palette.text.primary,
     width: "100%",
     padding: "8px",
-    margin: "0 8px 8px 0",
 }))
 
 const NavList = styled("ul")({
@@ -84,7 +86,11 @@ const AppLayout = () => {
                 <Library />
             </ContentBox>
         </Sidebar>
-        <Outlet />
+
+        <ContentBox>
+            <NavBar />
+            <Outlet />
+        </ContentBox>
     </Layout>
   )
 };
