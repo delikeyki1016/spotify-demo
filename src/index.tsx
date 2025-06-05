@@ -7,16 +7,22 @@ import { BrowserRouter } from 'react-router';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material'; //기본설정CSS를 mui에서 제공하는 기본설정으로 하겠다.
 import theme from "./theme"
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const root = ReactDOM.createRoot(
   document.getElementById('content') as HTMLElement
 );
+
+const queryClient = new QueryClient()
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline /> 
-        <App />
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
