@@ -13,13 +13,23 @@ const NewReleases = () => {
   if(error){
     return <ErrorMessage error={error.message} />
   }
+
+  // xs: 0,
+  //  *    // small
+  //  *    sm: 600,
+  //  *    // medium
+  //  *    md: 900,
+  //  *    // large
+  //  *    lg: 1200,
+  //  *    // extra-large
+  //  *    xl: 1536,
   return (
     <div>
       <Typography variant="h1" paddingTop="8px" paddingBottom="8px">New Released Albums</Typography>
       {data && data.albums.items.length > 0 ? (
         <Grid container spacing={2}>
           {data.albums.items.map((album)=>(
-            <Grid size={{xs:6, sm:4, md:2}} key={album.id}>
+            <Grid size={{xs:6, md:4, lg:2 }} key={album.id}>
               <Card image={album.images[0].url} name={album.name} artistName={album.artists[0].name} />
             </Grid>
           ))}
