@@ -6,6 +6,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './App.css';
 import Loading from './common/components/Loading';
+import CallbackPage from './pages/CallbackPage';
+// import useExchangeToken from './hooks/useExchangeToken';
 // lazy loading : 컴포넌트 호출 시에 들고 오겠다.
 const AppLayout = React.lazy(()=> import('./layout/AppLayout'))
 const HomePage = React.lazy(()=> import('./pages/HomePage/HomePage'))
@@ -21,12 +23,15 @@ const PlaylistPage = React.lazy(()=> import('./pages/Playlist/PlaylistPage'))
 // 4. 플레이 리스트 상세 /playlist/:id
 // 5. mobile : playlist view /playlist
 function App() {
+  
+
   return (
     // Suspense : 컴포넌트 호출 시에 로딩 중 표시
     <Suspense fallback={<Loading />}> 
     <Routes>
+      <Route path="/callback" element={<CallbackPage />} />
       <Route path="/" element={<AppLayout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<HomePage />} /> 
         <Route path="search" element={<SearchPage />} />
         <Route path="search/:keyword" element={<SearchWithKeywordPage />} />
         <Route path="playlist/:id" element={<PlaylistDetailPage />} />
