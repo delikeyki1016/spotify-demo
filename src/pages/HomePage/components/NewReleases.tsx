@@ -14,15 +14,7 @@ const NewReleases = () => {
     return <ErrorMessage error={error.message} />
   }
 
-  // xs: 0,
-  //  *    // small
-  //  *    sm: 600,
-  //  *    // medium
-  //  *    md: 900,
-  //  *    // large
-  //  *    lg: 1200,
-  //  *    // extra-large
-  //  *    xl: 1536,
+  // xs: 0, sm: 600, md: 900, lg: 1200, xl: 1536
   return (
     <div>
       <Typography variant="h1" paddingTop="8px" paddingBottom="8px">New Released Albums</Typography>
