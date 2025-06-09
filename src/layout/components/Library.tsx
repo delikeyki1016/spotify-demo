@@ -1,18 +1,25 @@
-import { useState } from "react";
 import EmptyPlayList from "./EmptyPlayList";
+import useGetCurrentUserPlaylists from "../../hooks/useGetCurrentUserPlayLists";
+import { Box } from "@mui/material";
 
 const Library = () => {
-    const [myPlaylist, setMyPlaylist] = useState(null)
+    const {data} = useGetCurrentUserPlaylists({limit:10, offset:0 })
+    console.log("ddd2", data)
     return <>
-        {!myPlaylist ? (
+        {data && data.items.length > 0 ? (
+            <Box display="flex" flexDirection={"column"} gap={"8px"} sx={{maxHeight: "calc(100vh - 220px)", overflowY: "auto"}}>
+                {data.items.map((playlist, index)=> (
+                    <Box display="flex" gap={"8px"} key={index}>
+                        <img src={playlist.images[0].url} alt="" style={{width: 50, borderRadius: "8px" }} />
+                        <Box display="flex" flexDirection={"column"} gap={"4px"}>
+                            <span style={{ fontWeight: 600}}>{playlist.name}</span>
+                            <span style={{color: "#666"}}>{playlist.owner?.display_name}</span>
+                        </Box>
+                    </Box>
+                ))}
+            </Box>
+        ):(
             <EmptyPlayList />
-        ) : (
-            <>
-                <h3>My playlist</h3>
-                <ul>
-                    <li>song1</li>
-                </ul>
-            </>
         )}
     </>;
 };
